@@ -20,7 +20,8 @@ driver = Selenium::WebDriver.for(:remote,
 #maximize the window - DESKTOPS ONLY
 driver.navigate.to "http://www.wikipedia.org"
 driver.manage.window.maximize
-
+#driver.save_screenshot('screenshot.png')
+driver.capture_entire_page_screenshot('fullpg.png')
 puts driver.title
 
 driver.quit
