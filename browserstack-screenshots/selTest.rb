@@ -18,10 +18,14 @@ driver = Selenium::WebDriver.for(:remote,
 :desired_capabilities => caps)
 
 #maximize the window - DESKTOPS ONLY
-driver.navigate.to "http://www.wikipedia.org"
+driver.navigate.to "https://onesmallact.beta.practicallygreen.com/sign_in"
+WebElement login_email = driver.find_element(:id, "session_email")
+login_email.sendKeys("clu@wespire.com")
+WebElement login_pass = driver.find_element(:id, "session_password")
+login_pass.sendKeys("Chrislu2*")
+WebElement enter = driver.find_element(:name, "commit")
 driver.manage.window.maximize
-#driver.save_screenshot('screenshot.png')
-driver.capture_entire_page_screenshot('fullpg.png')
+driver.save_screenshot('screenshot.png')
 puts driver.title
 
 driver.quit
