@@ -1,13 +1,20 @@
 #Please visit here https://code.google.com/p/selenium/wiki/RubyBindings for detailed installation and instructions
+require 'rubygems'
 require "selenium-webdriver"
 
 caps = Selenium::WebDriver::Remote::Capabilities.new
 
 caps["name"] = "Selenium Test Example"
 caps["build"] = "1.0"
-caps["browser_api_name"] = "IE9"
-caps["os_api_name"] = "Win7-C2"
+caps["browser"] = "Firefox"
+caps["browser_version"] = "36.0"
+caps["os"] = 'OS X'
+caps["os_version"] = 'Mavericks'
 caps["screen_resolution"] = "1280x768"
+
+caps['browserstack.local'] = 'true'
+caps['build'] = 'firstTest'
+caps['project'] = 'screenshots'
 #caps["record_video"] = "true"
 #caps["record_network"] = "true"
 #caps["record_snapshot"] = "true"
@@ -15,7 +22,7 @@ caps["screen_resolution"] = "1280x768"
 puts 'Starting cbt-test...'
 
 driver = Selenium::WebDriver.for(:remote,
-:url => "http://aborstein%40wespire.com:u56426565207b7b9@hub.crossbrowsertesting.com:80/wd/hub",
+:url => "http://andrewborstein1:fK7U9BqEyc8vAoYpgpME@hub.browserstack.com/wd/hub",
 :desired_capabilities => caps)
 
 #maximize the window - DESKTOPS ONLY
@@ -50,7 +57,7 @@ password.submit
 
 puts 'Fetching screenshot...'
 driver.manage.window.maximize
-driver.save_screenshot('screenshots/ie9_osa-dashboard.png')
+driver.save_screenshot('screenshots/firefox_osx-dashboard.png')
 
 puts 'Fetching page <title>...'
 puts "<title> #{driver.title}"
