@@ -1,4 +1,4 @@
-package testing;c:\\tmp\\
+package testing;
 
 import org.testng.annotations.Test;
 import org.openqa.selenium.WebDriver;
@@ -38,7 +38,7 @@ public class NewTest {
 		caps.setCapability("record_snapshot", "false");			
 		
 		try {
-			driver = new RemoteWebDriver(new URL("http://USERNAME:PASSWORD@hub.crossbrowsertesting.com:80/wd/hub"), caps);
+			driver = new RemoteWebDriver(new URL("http://aborstein@wespire.com:ASB@Br0wser!@hub.crossbrowsertesting.com:80/wd/hub"), caps);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
