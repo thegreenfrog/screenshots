@@ -1,0 +1,21 @@
+<suite name="testing cbt" verbose="10" parallel="tests">    
+    <test name="a">
+        <classes>
+            <class name="testing.NewTest">
+                <methods>
+                    <include name="myfirsttest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="b">
+        <classes>
+            <class name="testing.NewTest2">
+                <methods>
+                    <include name="anothertest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

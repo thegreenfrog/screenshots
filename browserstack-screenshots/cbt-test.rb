@@ -1,4 +1,4 @@
-# Please visit here https://code.google.com/p/selenium/wiki/RubyBindings for detailed installation and instructions
+#Please visit here https://code.google.com/p/selenium/wiki/RubyBindings for detailed installation and instructions
 require "selenium-webdriver"
 
 caps = Selenium::WebDriver::Remote::Capabilities.new
