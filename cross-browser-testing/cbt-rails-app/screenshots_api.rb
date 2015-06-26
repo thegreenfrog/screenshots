@@ -15,7 +15,8 @@ uri = URI('http://crossbrowsertesting.com/api/v3/screenshots')
 req = Net::HTTP::Post.new(uri)
 req.basic_auth 'aborstein@wespire.com', 'u56426565207b7b9'
 
-req.set_form_data("profile_name" => 'demo.int / user@test.com', 'browsers' => 'Chrome36', 'browsers' => 'MblChrome36', 'url' => 'https://onesmallact.beta.practicallygreen.com/')
+
+req.set_form_data('browser_list_name' => 'Desktop', 'url' => 'https://demo.int.wespire.com/teams', 'login' => 'demo.int / user@test.com')
 
 res = Net::HTTP.start(uri.hostname, uri.port) {|http|
   http.request(req)
@@ -25,4 +26,11 @@ res = Net::HTTP.start(uri.hostname, uri.port) {|http|
   http.request(req)
 }
 
-data = res.body
+results = res.body
+puts results
+
+parsed = JSON.parse(results)
+resultsUrl = parsed["versions"][0]["show_results_web_url"]
+
+puts "Results URL: #{resultsUrl}"
+system "open #{resultsUrl}"
